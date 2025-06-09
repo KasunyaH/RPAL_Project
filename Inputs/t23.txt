@@ -1,0 +1,17 @@
+let rec power x n = 
+    n eq 0 -> 1 |
+    n mod 2 eq 0 -> 
+        let half = power x (n/2) in
+        half * half |
+    x * power x (n-1)
+in
+let rec sqrt n = 
+    let rec sqrt_iter guess = 
+        let next = (guess + n/guess) / 2 in
+        abs (next - guess) < 0.0001 -> next |
+        sqrt_iter next
+    in
+    sqrt_iter 1.0
+in
+Print (power 2 10)
+Print (sqrt 16)

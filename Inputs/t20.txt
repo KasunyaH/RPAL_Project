@@ -1,0 +1,13 @@
+let rec foldl f acc list = 
+    list eq nil -> acc |
+    foldl f (f acc (hd list)) (tl list)
+in
+let rec foldr f acc list = 
+    list eq nil -> acc |
+    f (hd list) (foldr f acc (tl list))
+in
+let sum = foldl (fn acc x. acc + x) 0 in
+let product = foldr (fn x acc. x * acc) 1 in
+let numbers = 1:2:3:4:5:nil in
+Print (sum numbers)
+Print (product numbers)

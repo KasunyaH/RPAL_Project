@@ -1,0 +1,12 @@
+let safe_divide x y = 
+    y eq 0 -> "Error: Division by zero" |
+    x / y
+in
+let safe_head list = 
+    list eq nil -> "Error: Empty list" |
+    hd list
+in
+Print (safe_divide 10 2)
+Print (safe_divide 10 0)
+Print (safe_head (1:2:3:nil))
+Print (safe_head nil)

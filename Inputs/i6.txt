@@ -1,0 +1,11 @@
+let rec PalSeries a b = 
+    a > b -> nil |
+    isPal a -> (Print a, PalSeries (a+1) b) |
+    PalSeries (a+1) b
+
+where isPal num = num eq (getReverseNum num) -> true | false
+
+where getReverseNum n = getRevRec n 0
+where rec getRevRec n r = 
+    n eq 0 -> r | getRevRec (n/10) (r*10 + (n-(n/10*10)))
+in PalSeries 33 55

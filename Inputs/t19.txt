@@ -1,0 +1,7 @@
+let rec tree_sum t = 
+    t eq nil -> 0 |
+    let (value, left, right) = t in
+    value + tree_sum left + tree_sum right
+in
+let tree = (1, (2, nil, nil), (3, nil, nil)) in
+Print (tree_sum tree)

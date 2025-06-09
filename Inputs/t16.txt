@@ -1,0 +1,6 @@
+let rec factorial n = n eq 0 -> 1 | n * factorial (n-1) in
+let rec fibonacci n = n eq 0 -> 0 | n eq 1 -> 1 | fibonacci (n-1) + fibonacci (n-2) in
+let rec gcd a b = b eq 0 -> a | gcd b (a mod b) in
+Print (factorial 5)
+Print (fibonacci 7)
+Print (gcd 48 18)

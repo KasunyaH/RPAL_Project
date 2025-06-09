@@ -1,0 +1,7 @@
+let FindMax a b c = 
+    (Isinteger a) & (Isinteger b) & (Isinteger c) ->
+        a >= b ->
+            a>=c -> a | c
+        | b>=c -> b | c
+    | 'Invalid type of input'
+in Print (FindMax (-3) (-1) (-23))
