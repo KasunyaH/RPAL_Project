@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # RPAL Interpreter
 
 ## Introduction
@@ -104,4 +103,5 @@ If the input file specified in the command is not found, double-check the path t
 =======
 # Learning-RPAL
 A personal repository for learning and experimenting with RPAL (Right-reference Programming Algorithmic Language). This includes test programs, syntax exploration, abstract syntax tree generation, and interpretation using RPAL tools.
->>>>>>> 40b26096b890a5981fee262e5fdd9482258c33b5
+
+
