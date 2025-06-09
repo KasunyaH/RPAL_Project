@@ -1,0 +1,13 @@
+let grade score = 
+    score ge 90 -> "A" |
+    score ge 80 -> "B" |
+    score ge 70 -> "C" |
+    score ge 60 -> "D" |
+    "F"
+in
+let scores = 85:92:78:65:88:nil in
+let rec grade_all scores = 
+    scores eq nil -> nil |
+    (grade (hd scores)) : (grade_all (tl scores))
+in
+Print (grade_all scores)

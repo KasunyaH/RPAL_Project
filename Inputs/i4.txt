@@ -1,0 +1,4 @@
+let rec SumupTo n = 
+    not (Isinteger n) -> 'Invalid type of input' |
+    n eq 0 -> 0 | n + SumupTo (n - 1)
+in Print(SumupTo th)

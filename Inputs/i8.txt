@@ -1,0 +1,8 @@
+let getPerfectSquare num = perfectSquare num 1 where
+
+rec perfectSquare x i = 
+    x eq i*i -> 'true' |
+    x < (i*i)  -> 'false' |
+    perfectSquare x (i+1)
+in Print (getPerfectSquare 4)
+    

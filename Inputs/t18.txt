@@ -1,0 +1,10 @@
+let make_counter start = 
+    let count = start in
+    let increment = fn x. count := count + x in
+    let get_count = fn. count in
+    (increment, get_count)
+in
+let (inc, get) = make_counter 0 in
+Print (get())
+Print (inc 5)
+Print (get())

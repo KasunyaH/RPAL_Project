@@ -1,0 +1,21 @@
+let rec make_stack = 
+    let stack = nil in
+    let push x = stack := x : stack in
+    let pop = 
+        stack eq nil -> nil |
+        let x = hd stack in
+        stack := tl stack;
+        x
+    in
+    let peek = 
+        stack eq nil -> nil |
+        hd stack
+    in
+    (push, pop, peek)
+in
+let (push, pop, peek) = make_stack in
+Print (push 1)
+Print (push 2)
+Print (peek())
+Print (pop())
+Print (peek())

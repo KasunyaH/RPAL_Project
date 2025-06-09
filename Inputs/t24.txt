@@ -1,0 +1,14 @@
+let rec string_length s = 
+    s eq "" -> 0 |
+    1 + string_length (tl s)
+in
+let rec string_reverse s = 
+    s eq "" -> "" |
+    string_reverse (tl s) ^ (hd s)
+in
+let palindrome s = 
+    s eq string_reverse s
+in
+Print (string_length "Hello")
+Print (string_reverse "Hello")
+Print (palindrome "radar")

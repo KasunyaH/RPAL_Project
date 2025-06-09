@@ -1,0 +1,9 @@
+let map f list = list eq nil -> nil | (f (hd list)) : (map f (tl list)) in
+let filter p list = list eq nil -> nil | 
+    p (hd list) -> (hd list) : (filter p (tl list)) | 
+    filter p (tl list) in
+let double x = x * 2 in
+let is_even x = x mod 2 eq 0 in
+let numbers = 1:2:3:4:5:nil in
+Print (map double numbers)
+Print (filter is_even numbers)
