@@ -1,5 +1,5 @@
 from enum import Enum
-from Lexer.lexical_analyzer import TokenType, MyToken
+from lexer.lexer import TokenType, MyToken
 
 class NodeType(Enum):
     # Core nodes
@@ -50,7 +50,7 @@ class NodeType(Enum):
         elif self == NodeType.true_value:
             return "TRUE_VALUE"
         elif self == NodeType.false_value:
-            return "TRUE_VALUE"
+            return "FALSE_VALUE"
         elif self == NodeType.nil:
             return "NIL"
         elif self == NodeType.dummy:
