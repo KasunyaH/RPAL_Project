@@ -78,22 +78,3 @@ def tokenize(input_str):
 # for token in tokens:
 #     print(token.type, token.value)
 
-def A(self):
-    if self.tokens and self.tokens[0].value == "+":
-        self.consume_token("+")
-        self.At()
-    elif self.tokens and self.tokens[0].value == "-":
-        self.consume_token("-")
-        self.At()
-        self.ast.append(Node(NodeType.op_neg, "neg", 1))
-    else:
-        self.At()
-
-    while self.tokens and self.tokens[0].value in {"+", "-"}:
-        current_token = self.tokens[0]
-        self.consume_token(current_token.value)
-        self.At()
-        if current_token.value == "+":
-            self.ast.append(Node(NodeType.op_plus, "+", 2))
-        else:
-            self.ast.append(Node(NodeType.op_minus, "-", 2))
