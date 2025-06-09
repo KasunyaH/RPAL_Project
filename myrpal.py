@@ -1,6 +1,8 @@
 import sys
 from parser.Parser import Parser
 from lexer.lexer import tokenize
+from standardizer.ast_factory import ASTFactory
+from standardizer.node import Node
 
 def get_file_content(file_path):
     try:
@@ -19,6 +21,7 @@ def main():
     # get file and flags
     input_file = sys.argv[1]
     show_ast = '-ast' in sys.argv
+    show_sast = '-sast' in sys.argv
 
     # read file
     code = get_file_content(input_file)
@@ -42,6 +45,16 @@ def main():
         if show_ast:
             for line in string_ast:
                 print(line)
+            return
+
+        # Create standardized AST
+        ast = ASTFactory.get_abstract_syntax_tree(string_ast)
+        ast.root.standardize()
+
+        # show standardized AST if needed
+        if show_sast:
+            print("\nStandardized Abstract Syntax Tree:")
+            ast.print_tree()
             return
 
         # For now, just print the AST
